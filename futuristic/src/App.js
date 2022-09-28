@@ -1,11 +1,13 @@
 // import logo from './logo.svg';
 import "./App.css";
-import Job from "./Component/Job";
+
+import Navbar from "./Pages/Navbar";
 
 function App() {
   return <div className="App">
-    <Job/>
-    </div>;
+    <Navbar/>
+  </div>;
+
 }
 
 export default App;
