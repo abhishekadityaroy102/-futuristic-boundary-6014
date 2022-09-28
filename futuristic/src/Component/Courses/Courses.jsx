@@ -1,13 +1,11 @@
 import React from "react";
+import Footer from "../../Pages/Footer";
 
 const Courses = () => {
   return (
     <div>
       Courses
-      <h2>ADD</h2>
-      <h2>ADD</h2>
-      <h2>ADD</h2>
-      <h2>ADD</h2>
+      <Footer />
     </div>
   );
 };
