@@ -1,10 +1,13 @@
 import React from "react";
-import Footer from "../../Pages/Footer";
 
 const Courses = () => {
   return (
     <div>
-      <Footer />
+      Courses
+      <h2>ADD</h2>
+      <h2>ADD</h2>
+      <h2>ADD</h2>
+      <h2>ADD</h2>
     </div>
   );
 };
