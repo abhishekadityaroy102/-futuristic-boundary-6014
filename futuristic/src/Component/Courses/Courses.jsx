@@ -4,7 +4,7 @@ import Footer from "../../Pages/Footer";
 const Courses = () => {
   return (
     <div>
-      Courses
+      Courses Yes
       <Footer />
     </div>
   );
