@@ -2,8 +2,12 @@ import React from 'react'
 
 const Job = () => {
   return (
-    <div>Job
-        <h1>Job test</h1>
+    // eslint-disable-next-line react/jsx-no-comment-textnodes
+    <div>
+      /* job initial stage */
+        <div>
+          <div></div>
+        </div>
     </div>
   )
 }
