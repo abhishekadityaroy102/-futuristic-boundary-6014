@@ -8,6 +8,7 @@ import Homepage from '../Component/Homepage/Homepage'
 import Jobs from '../Component/Jobsection/Jobs'
 import Login from '../Component/LoginSignup/Login'
 import Profile from '../Component/Profile/Profile'
+import Search from '../Pages/Search'
 import RequireAuthRoute from './RequireAuthRoute'
 const MainAppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const MainAppRoutes = () => {
      <Route path="/" element={<Homepage/>}></Route>
      <Route path='/dashboard' element={<RequireAuthRoute><Dashboard/></RequireAuthRoute>}></Route>
      <Route path="/job-search" element={<Jobs/>}></Route>
+     <Route path="/search" element={<Search/>}></Route>
      <Route path="/courses" element={<Courses/>}></Route>
      <Route path="/login" element={<Login/>}></Route>
      <Route path="/user-profile" element={<RequireAuthRoute><Profile/></RequireAuthRoute>}></Route>
