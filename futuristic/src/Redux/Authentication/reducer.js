@@ -1,5 +1,5 @@
 const initialstate={
-  isAuth:false
+  isAuth:true
 }
 export const reducer=(state=initialstate,{type,payload})=>{
       switch(type){
