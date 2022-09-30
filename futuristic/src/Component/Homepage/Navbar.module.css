@@ -1,0 +1,21 @@
+.Navbar_link_wrap{
+ display: flex;
+ justify-content: space-between;
+ width: 100%;
+
+ border:1px solid black;
+}
+.Navbar_login_wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+.Navbar_logo_and_search{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+.Navbar_logo_and_search img{
+    width: 100px;
+    height: 50px;
+}
