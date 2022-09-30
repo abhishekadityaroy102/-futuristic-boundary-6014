@@ -5,6 +5,8 @@
          "company_name": "Genpact India Pvt. Ltd.",
          "location": "Bangalore",
          "salary":"5 lakh",
+         "early":"Be an Early Applicant",
+         "reqular":"Regular",
          "experience": "0 to 4 Yrs",
           "skill":["html", "css","javascript", "React"],
          "id": "1"
@@ -14,6 +16,8 @@
             "company_name": "GFL RECRUITMENT PRIVATE LIMITED",
             "location": "Bangalore",
             "salary":"3 lakh",
+            "early":"Regular",
+         "reqular":"5 Position",
             "experience": "2 to 4 Yrs",
              "skill":["html", "css","javascript", "React"],
             "id": "2"
@@ -23,6 +27,8 @@
             "company_name": "Xoriant Solutions Pvt Ltd",
             "location": "Bangalore",
             "experience": "2 to 4 Yrs",
+            "early":"Be an Early Applicant",
+         "reqular":"Regular",
               "salary":"4 lakh",
              "skill":["html", "css","javascript", "React"],
             "id": "3"
@@ -32,6 +38,8 @@
             "company_name": "Genpact India Pvt. Ltd.",
             "location": "Bangalore",
             "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+         "reqular":"Regular",
             "experience": "3 to 6 Yrs",
              "skill":["html", "css","javascript", "React"],
             "id": "4"
@@ -41,6 +49,8 @@
             "company_name": "Xoriant Solutions Pvt Ltd.",
             "location": "Bangalore",
             "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+         "reqular":"Regular",
             "experience": "2 to 3 Yrs",
              "skill":["html", "css","javascript", "React"],
             "id": "5"
@@ -50,6 +60,8 @@
             "company_name": "Madison Cube Recruitment",
             "location": "Bangalore",
             "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+         "reqular":"Regular",
             "experience": "0 to 4 Yrs",
              "skill":["html", "css","javascript", "React"],
             "id": "6"
@@ -59,6 +71,8 @@
             "company_name": "Aem Developer Ltd.",
             "location": "Bangalore",
             "salary":"7 lakh",
+            "early":"Be an Early Applicant",
+             "reqular":"Regular",
             "experience": "3 to 6 Yrs",
              "skill":["html", "css","javascript", "React"],
             "id": "7"
@@ -68,6 +82,8 @@
             "company_name": "Sportism",
             "location": "Bangalore",
             "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+              "reqular":"Regular",
             "experience": "3 to 4 Yrs",
              "skill":["html", "css","javascript", "React"],
             "id": "8"
@@ -77,6 +93,8 @@
             "company_name": "Space Consultant..",
             "location": "Bangalore",
             "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+             "reqular":"Regular",
             "experience": "2 to 4 Yrs",
              "skill":["html", "css","javascript", "React"],
             "id": "9"
@@ -86,6 +104,8 @@
             "company_name": "Space Consultant.",
             "location": "Bangalore",
             "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+            "reqular":"Regular",
             "experience": "1 to 3 Yrs",
              "skill":["html", "css","javascript", "React"],
             "id": "10"
@@ -95,6 +115,8 @@
             "company_name": "Xoriant Solutions Pvt Ltd",
             "location": "Bangalore",
             "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+             "reqular":"Regular",
             "experience": "2 to 5 Yrs",
              "skill":["html", "css","javascript", "React","Sql","Java"],
             "id": "11"
@@ -104,6 +126,8 @@
             "company_name": "Vish International",
             "location": "Bangalore",
             "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+             "reqular":"Regular",
             "experience": "2 to 4 Yrs",
              "skill":["html", "css","javascript", "React","Mongodb","Nodejs"],
             "id": "12"

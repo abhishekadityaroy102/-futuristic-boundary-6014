@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from "styled-components"
 import { FaPen ,FaLocationArrow ,FaTasks,FaShareAlt,FaBriefcase,FaAngleDown ,FaRegBookmark} from "react-icons/fa";
+import {useSelector,useDispatch} from "react-redux";
+import { getJob } from '../../Redux/AppControl/action';
 
 const Job = () => {
+const [data,setData]= useState(0);
+const [apply, setApply]= useState([])
+const jobs= useSelector((state)=>state.Appcontrol.jobs);
 
-  
+const dispatch=useDispatch();
+  const handleApply=()=>{
+    
+      alert("something write")
+  }
+useEffect(()=>{
+if(jobs.length===0){
+  dispatch(getJob())
+}
+},[dispatch, jobs.length])
+console.log(jobs)
+
   return (
 
     <Gcontainer>
@@ -13,7 +29,7 @@ const Job = () => {
         <Row>
 
           <Heading>
-              <h1>12 Software Developer ... </h1>
+              <H1>12 Software Developer ... </H1>
               <Aligncenter>
                 <Iconsection>
                      <Pen><FaPen/></Pen>
@@ -66,428 +82,53 @@ const Job = () => {
 
         <Secondcontainer>
           <Left  >
-                <Box>
-                  <Div>
-                    <span>Premium</span>
-                    <span>1 week ago</span>
-                  </Div>
-                  <H2>DG - Process Developer - Customer Service</H2>
-                  <Company>
-                      <span>Genpact India Pvt Ltd.</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>0 to 4 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
+            { jobs.length >0 && jobs.map((item,index)=>{
 
-                </Box>
-                <Box>
-                  <Div>
-                    <span></span>
-                    <span>3 days ago</span>
-                  </Div>
-                  <H2>Hiring for Python/AWS Developer</H2>
-                  <Company>
-                      <span>GFL RECRUITMENT PRIVATE LIMITED</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>2 to 4 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Regular</Li1>
-                      <Li1>5 Position</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
+              return  <Box onClick={()=> setData(index,item) }  key={item.id}>
+                      <Div>
+                        <span>Premium</span>
+                        <span>1 week ago</span>
+                      </Div>
+                      <H2>{item.job_title}</H2>
+                      <Company>
+                          <span>{item.company_name}</span>
+                      </Company>
+                        <Jobcard>
+                            <Jobcardlist> 
+                              <span><FaLocationArrow/></span>
+                              <span>{item.location}</span>
+                              </Jobcardlist>
+                              <Jobcardlist>
+                              <span><FaBriefcase/></span>
+                              <span>{item.experience}</span> 
+                              
+                              </Jobcardlist>
+                        </Jobcard>
+                        <Ul1>
+                          <Li1>{item.early}</Li1>
+                          <Li1>{item.reqular}</Li1>
+                        </Ul1>
+                        <JobhighLight>
+                            <span></span>
+                            <Apply>
+                              <Applybutton  >
+                                <button style={{fontSize:"15px", fontWeight:"bold",color:"blue"}} onClick={handleApply} >Apply</button>
+                              </Applybutton>
+                            </Apply>
+                        </JobhighLight>
 
-                </Box>
-                <Box>
-                  <Div>
-                    <span></span>
-                    <span>1 month ago</span>
-                  </Div>
-                  <H2>Jr. Software Engineer</H2>
-                  <Company>
-                      <span>Xoriant Solutions Pvt Ltd</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>2 to 4 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
 
-                </Box>
-                <Box>
-                  <Div>
-                    <span>Premium</span>
-                    <span>1 week ago</span>
-                  </Div>
-                  <H2>Working profile for Consultant -Campus Fresher</H2>
-                  <Company>
-                      <span>Genpact India Pvt Ltd.</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>3 to 6 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
+                      </Box>
 
-                </Box>
-                <Box>
-                  <Div>
-                    <span>Premium</span>
-                    <span>1 week ago</span>
-                  </Div>
-                  <H2>Senior Software Engg</H2>
-                  <Company>
-                      <span>Xoriant Solutions Pvt Ltd.</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>2 to 3 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
-
-                </Box>
-                <Box>
-                  <Div>
-                    <span></span>
-                    <span>1 montth ago</span>
-                  </Div>
-                  <H2>Quant Strategist/Developer/Researcher - Quantitative Tr ...</H2>
-                  <Company>
-                      <span>Madison Cube Recruitment</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>0 to 4 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
-
-                </Box>
-                <Box>
-                  <Div>
-                    <span></span>
-                    <span>3 days ago</span>
-                  </Div>
-                  <H2>Aem Developer</H2>
-                  <Company>
-                      <span>Aem Developer Ltd.</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>3 to 6 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
-
-                </Box>
-                <Box>
-                  <Div>
-                    <span></span>
-                    <span>5 days ago</span>
-                  </Div>
-                  <H2>Apple iOS Corporate Trainer - SWIFT/Objective C</H2>
-                  <Company>
-                      <span>Sportism</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>3 to 4 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
-
-                </Box>
-                <Box>
-                  <Div>
-                    <span></span>
-                    <span>2 week ago</span>
-                  </Div>
-                  <H2>Hiring for Asp.net Developer</H2>
-                  <Company>
-                      <span>Space Consultant..</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>2 to 4 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
-
-                </Box>
-                <Box>
-                  <Div>
-                    <span></span>
-                    <span>2 week ago</span>
-                  </Div>
-                  <H2>ASP.Net Developer</H2>
-                  <Company>
-                      <span>Space Consultant..</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>1 to 3 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
-
-                </Box>
-                <Box>
-                  <Div>
-                    <span></span>
-                    <span>1 month ago</span>
-                  </Div>
-                  <H2>Senior Java Technical Manager</H2>
-                  <Company>
-                      <span>Xoriant Solutions Pvt Ltd</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>2 to 5 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
-
-                </Box>
-                <Box>
-                  <Div>
-                    <span></span>
-                    <span>1 month ago</span>
-                  </Div>
-                  <H2>Wordpress Developer (freshers)</H2>
-                  <Company>
-                      <span>Vish International</span>
-                  </Company>
-                    <Jobcard>
-                        <Jobcardlist> 
-                          <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
-                          </Jobcardlist>
-                          <Jobcardlist>
-                          <span><FaBriefcase/></span>
-                           <span>2 to 4 yrs</span> 
-                           
-                           </Jobcardlist>
-                    </Jobcard>
-                    <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
-                    </Ul1>
-                    <JobhighLight>
-                        <span></span>
-                        <Apply>
-                          <Applybutton>
-                            <button>Apply</button>
-                          </Applybutton>
-                        </Apply>
-                    </JobhighLight>
-                  
-
-                </Box>
+            } ) }
+                
+               
           </Left>
+
           <Right>
+          
+             { data} 
+             
              <Jobdetil>
              <Box>
                   <Div>
@@ -517,7 +158,7 @@ const Job = () => {
                         
                         <Apply1>
                           <Applybutton1>
-                            <button>Apply</button>
+                            <button  style={{fontSize:"15px", fontWeight:"bold",color:"blue"}} onClick={handleApply}>Apply</button>
                           </Applybutton1>
                         </Apply1>
                         <Ul2>
@@ -555,9 +196,9 @@ const Job = () => {
 
         {/* Job description */}
          <Rightdetail>
-          <h3>Job Details</h3>
+          <h3 style={{textAlign:"start"}} >Job Details</h3>
           <Jobdetailtext>
-              <span>
+              <span style={{textAlign:"start"}}>
                 <h4>Job Description</h4>
                   <ul>
                     <li>
@@ -633,7 +274,7 @@ const Job = () => {
                 </span>
           </Jobdetailtext>
           <Other>
-            <h4>Other Details</h4>
+            <h4 style={{ textAlign:"start",fontSize:"24px",fontWeight:"bold" }}>Other Details</h4>
             <Ul4>
               <Li4>
                 <span>Department</span>
@@ -647,7 +288,7 @@ const Job = () => {
           </Other>
          </Rightdetail>
                  <Key>
-                      <h3>Key Skill</h3>
+                      <H3>Key Skill</H3>
                       <Ul5>
                         <Li5>
                           <a href="https://www.shine.com/job-search/bootstrap-jobs">bootstrap</a>
@@ -667,6 +308,44 @@ const Job = () => {
                       </Ul5>
                       <More>More skill</More>
                  </Key>
+                 <Key>
+                      <H3>Recruiter Details</H3>
+                      <Ul5>
+                        <Li5>
+                          <span>Genpact India Pvt. Ltd.</span>
+                        </Li5>
+                        <Li5>
+                          <span>Bangalore</span>
+                        </Li5>
+                        <Li5>
+                          <span>hidden_email</span>
+                        </Li5>
+                        <Li5>
+                          <span>hidden_mobile</span>
+                        </Li5>
+                   
+                      </Ul5>
+                      <span></span>
+                      <More> <a href="https://www.shine.com/job-search/genpact-india-pvt-ltd-openings?rect=748765"> Show all Jobs by this Recruiter</a></More>
+
+
+                 </Key>
+                 <Key>
+                      <H3>Company Details</H3>
+                      <div  style={{textAlign:"start"}}>
+                        <p>
+                          <strong>
+                          Genpact is an Equal Opportunity Employer and considers applicants for all positions without regard to race, color, religion or belief, sex, age, national origin, citizenship status, marital status, military/veteran status, genetic information, sexual orientation, gender identity, physical or mental disability or any other characteristic protected by applicable laws.
+                          </strong>
+                         
+                          Genpact is committed to creating a dynamic work environment that values diversity and inclusion, respect and integrity, customer focus, and innovation. For more information, visit www.genpact.com. Follow us on Twitter, Facebook, LinkedIn, and YouTube.
+                          
+                        </p>
+                      </div>
+
+
+                 </Key>
+
           </Right>
         </Secondcontainer>
     </Gcontainer>
@@ -674,6 +353,7 @@ const Job = () => {
 }
 
 export default Job;
+
 const Gcontainer= styled.div`
   width:80%;
    margin:auto;
@@ -686,9 +366,14 @@ const Container= styled.div`
     box-sizing: inherit;
     outline: none;
 `
+const H1= styled.div`
+   margin-top:35px;
+   font-size:20px;
+`
 const Row=styled.div`
 display: flex;
 flex-wrap: wrap;
+margin-top:0;
 margin-right: 0;
 margin-left: 0;
 box-sizing: inherit;
@@ -832,27 +517,31 @@ height: 2rem;
 font-weight: 400;
 color: #38404c;
 `
+//   border:2px solid blue;
 const Secondcontainer= styled.div`
-    border:2px solid blue;
+  
      display:flex;
 `
+//   border:2px solid brown;
 const Left= styled.div`
   flex:30%;
   height:700px;
   margin-left:5px;
-  border:2px solid brown;
+
   overflow:scroll;
   white-space: normal;
 
 `
+//border:2px solid violet;
 const Right= styled.div`
 flex:70%;
 height:100vh;
-border:2px solid violet;
+
 overflow:scroll;
 white-space:normal;
 margin-left:20px;
 `
+
 const Box= styled.div`
 display:block;
  width:95%;
@@ -985,14 +674,14 @@ align-items:flex-start;
 
 `
 const Jobdetil=styled.div`
-
+background-color: #f3fbfd;
   width:100%;
   position:relative;
 `
-
+//  border:1px solid green;
 const Box2=styled.div`
    width:95%;
-   border:1px solid green;
+ 
    margin:auto;
    scroll-behavior: smooth;
  
@@ -1034,14 +723,14 @@ padding-bottom: 3px;
 font-weight: 700;
 border-bottom: 2px solid #8652ff;
 `
-
+//border: 1px solid #ececec;
 const Rightdetail=styled.div`
-text-align: start;
+
 box-sizing: inherit;
 outline: none;
 margin-bottom: 20px;
 background-color: #fff;
-border: 1px solid #ececec;
+
 width: 100%;
 padding: 1.5rem;
 box-shadow: 0 0 15px 0 rgb(0 0 0 / 10%);
@@ -1055,6 +744,12 @@ white-space: pre-wrap;
 line-height: 1.5;
 color: #505e6b;
 `
+const H3= styled.div`
+font-size:24px;
+font-weight:bold;
+text-align:start;
+
+`
 
 const Jobdetailtext= styled.div`
 font-family: PT Sans,sans-serif;
@@ -1065,6 +760,8 @@ box-sizing: inherit;
 
 `
 const Other= styled.div`
+text-align:start;
+font-size:24px;
 font-size: 1.5rem;
 box-sizing: inherit;
 outline: none;
@@ -1084,12 +781,12 @@ const Li4 = styled.div`
     font-size: 1.5rem;
 
 `
-
+//     border: 1px solid #ececec;
 const Key=styled.div`
 text-align:center;
 margin-bottom: 20px;
 background-color: #fff;
-    border: 1px solid #ececec;
+
     width: 100%;
     padding: 1.5rem;
     box-shadow: 0 0 15px 0 rgb(0 0 0 / 10%);
@@ -1114,6 +811,7 @@ flex-shrink: 0;
 
 
 const More= styled.div`
+display:flex;
     border: 0;
     color: #8652ff!important;
     background-color: transparent;
