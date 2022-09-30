@@ -649,23 +649,23 @@ const Job = () => {
                  <Key>
                       <h3>Key Skill</h3>
                       <Ul5>
-                        <li>
+                        <Li5>
                           <a href="https://www.shine.com/job-search/bootstrap-jobs">bootstrap</a>
-                        </li>
-                        <li>
+                        </Li5>
+                        <Li5>
                           <a href="https://www.shine.com/job-search/css-jobs">css</a>
-                        </li>
-                        <li>
+                        </Li5>
+                        <Li5>
                           <a href="https://www.shine.com/job-search/javscript-jobs">javascript</a>
-                        </li>
-                        <li>
+                        </Li5>
+                        <Li5>
                           <a href="https://www.shine.com/job-search/html-jobs">html</a>
-                        </li>
-                        <li>
+                        </Li5>
+                        <Li5>
                           <a href="https://www.shine.com/job-search/react-jobs">React</a>
-                        </li>
+                        </Li5>
                       </Ul5>
-                      <div>More skill</div>
+                      <More>More skill</More>
                  </Key>
           </Right>
         </Secondcontainer>
@@ -1100,6 +1100,26 @@ const Ul5= styled.div`
 margin: 10px 0;
 display: flex;
 flex-wrap: wrap;
+`
+const Li5 = styled.div`
+margin: 10px 0;
+display: flex;
+flex-wrap: wrap;
+margin: 5px 10px 5px 0;
+flex-shrink: 0;
+
+`
 
 
+
+
+const More= styled.div`
+    border: 0;
+    color: #8652ff!important;
+    background-color: transparent;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    justify-content: flex-end;
 `
