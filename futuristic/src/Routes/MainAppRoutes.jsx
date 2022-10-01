@@ -18,6 +18,7 @@ const MainAppRoutes = () => {
      <Route path="/" element={<Homepage/>}></Route>
      <Route path='/dashboard' element={<RequireAuthRoute><Dashboard/></RequireAuthRoute>}></Route>
      <Route path="/job-search" element={<Jobs/>}></Route>
+     <Route path="/job-search:query" element={<Jobs/>}></Route>
      <Route path="/search" element={<Search/>}></Route>
      <Route path="/courses" element={<Courses/>}></Route>
      <Route path="/login" element={<Login/>}></Route>

@@ -1,10 +1,10 @@
 
 import * as types from "./action.types"
 import axios from "axios"
-const getJob= (payload)=>(dispatch)=>{
-
+const getJob= (params)=>(dispatch)=>{
+  console.log("inside action",params)
   dispatch({ type: types.GET_JOB_REQUEST})
-  return axios.get("http://localhost:8080/jobs",payload)
+  return axios.get("http://localhost:8081/jobs",params)
   .then((r)=>{
    
    dispatch({ type: types.GET_JOB_SUCCESS, payload:r.data})

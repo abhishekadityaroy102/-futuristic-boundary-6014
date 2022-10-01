@@ -1,7 +1,7 @@
 {
     "jobs":[
         {
-         "title": "DG - Process Developer - Customer Service",
+         "job_title": "DG - Process Developer - Customer Service",
          "company_name": "Genpact India Pvt. Ltd.",
          "location": "Bangalore",
          "salary":"5 lakh",
@@ -12,7 +12,7 @@
          "id": "1"
         },
         {
-            "title": "Hiring for Python/AWS Developer",
+            "job_title": "Hiring for Python/AWS Developer",
             "company_name": "GFL RECRUITMENT PRIVATE LIMITED",
             "location": "Bangalore",
             "salary":"3 lakh",
@@ -23,7 +23,7 @@
             "id": "2"
            },
            {
-            "title": "Jr. Software Engineer",
+            "job_title": "Jr. Software Engineer",
             "company_name": "Xoriant Solutions Pvt Ltd",
             "location": "Bangalore",
             "experience": "2 to 4 Yrs",
@@ -34,7 +34,7 @@
             "id": "3"
            },
            {
-            "title": "Working profile for Consultant -Campus Fresher",
+            "job_title": "Working profile for Consultant -Campus Fresher",
             "company_name": "Genpact India Pvt. Ltd.",
             "location": "Bangalore",
             "salary":"5 lakh",
@@ -45,9 +45,9 @@
             "id": "4"
            },
            {
-            "title": "Senior Software Engg",
+            "job_title": "Senior Software Engg",
             "company_name": "Xoriant Solutions Pvt Ltd.",
-            "location": "Bangalore",
+            "location": "kerela",
             "salary":"5 lakh",
             "early":"Be an Early Applicant",
          "reqular":"Regular",
@@ -56,7 +56,7 @@
             "id": "5"
            },
            {
-            "title": "Quant Strategist/Developer/Researcher - Quantitative Tr ...",
+            "job_title": "Quant Strategist/Developer/Researcher - Quantitative Tr ...",
             "company_name": "Madison Cube Recruitment",
             "location": "Bangalore",
             "salary":"5 lakh",
@@ -67,7 +67,7 @@
             "id": "6"
            },
            {
-            "title": "Aem Developer",
+            "job_title": "Aem Developer",
             "company_name": "Aem Developer Ltd.",
             "location": "Bangalore",
             "salary":"7 lakh",
@@ -78,9 +78,9 @@
             "id": "7"
            },
            {
-            "title": "Apple iOS Corporate Trainer - SWIFT/Objective C",
+            "job_title": "Apple iOS Corporate Trainer - SWIFT/Objective C",
             "company_name": "Sportism",
-            "location": "Bangalore",
+            "location": "Barh",
             "salary":"5 lakh",
             "early":"Be an Early Applicant",
               "reqular":"Regular",
@@ -89,7 +89,7 @@
             "id": "8"
            },
            {
-            "title": "Hiring for Asp.net Developer",
+            "job_title": "Hiring for Asp.net Developer",
             "company_name": "Space Consultant..",
             "location": "Bangalore",
             "salary":"5 lakh",
@@ -100,7 +100,7 @@
             "id": "9"
            },
            {
-            "title": "ASP.Net Developer",
+            "job_title": "ASP.Net Developer",
             "company_name": "Space Consultant.",
             "location": "Bangalore",
             "salary":"5 lakh",
@@ -111,7 +111,7 @@
             "id": "10"
            },
            {
-            "title": "Senior Java Technical Manager",
+            "job_title": "Senior Java Technical Manager",
             "company_name": "Xoriant Solutions Pvt Ltd",
             "location": "Bangalore",
             "salary":"5 lakh",
@@ -122,7 +122,7 @@
             "id": "11"
            },
            {
-            "title": "Wordpress Developer (freshers)",
+            "job_title": "Wordpress Developer (freshers)",
             "company_name": "Vish International",
             "location": "Bangalore",
             "salary":"5 lakh",

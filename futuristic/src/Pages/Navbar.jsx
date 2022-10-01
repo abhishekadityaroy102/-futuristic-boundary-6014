@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { forwardRef } from 'react'
-import {NavLink, useSearchParams} from "react-router-dom"
+import {NavLink, useNavigate, useSearchParams} from "react-router-dom"
 import MainAppRoutes from '../Routes/MainAppRoutes'
 import styles from "../Component/Homepage/Navbar.module.css"
 import {useState} from "react"
@@ -29,6 +29,7 @@ resize: "vertical"
 }
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const navigate=useNavigate()
   const [text,settext]=useState({
     job_title:"",
     location:"",
@@ -46,12 +47,19 @@ const Navbar = () => {
     settext({...text,[name]:value})
   }
   const handlesearchjobs=()=>{
+  
     setexperience(text.experience)
     setjob_title(text.job_title)
     setlocation(text.location)
     console.log(text)
+    onClose()
+    return navigate("/job-search")
+ 
+   
+
    
   }
+
   useEffect(()=>{
     if(location||job_title||experience){
       let params={};
@@ -59,6 +67,7 @@ const Navbar = () => {
       location&&(params.location=location);
       experience&&(params.experience=experience)
     setsearchParams(params)
+    
     }
   },[job_title,setsearchParams,location,experience])
   const {data}=useQuerydata(text.job_title)
