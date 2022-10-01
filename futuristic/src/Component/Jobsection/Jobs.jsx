@@ -12,13 +12,13 @@ const [data,setData]= useState(0);
 const [apply, setApply]= useState(false);
 const navigate= useNavigate();
 const jobs= useSelector((state)=>state.Appcontrol.jobs);
-const [searchParams, setSearchParams] = useSearchParams();
-const initialSortBy = searchParams.getAll("sortBy");
-const [sortBy, setSortBy] = useState(initialSortBy[0] || "");
+const [searchParams] = useSearchParams();
+// const initialSortBy = searchParams.getAll("sortBy");
+const [sortBy, setSortBy] = useState("");
 // const [searchParams]=useSearchParams()
 const location = useLocation();
 const dispatch=useDispatch();
-   
+
 
     const handleSort=(e)=>{
           setSortBy(e.target.value)
@@ -28,41 +28,54 @@ const dispatch=useDispatch();
 
 
   const handleApply=()=>{
-      if(Apply){
-        navigate("/")
-      }
-      setApply("")
+    //   if(Apply){
+    //     navigate("/")
+    //   }
+    //   setApply("")
      
      
-     alert("applied successful")
+    //  alert("applied successful")
      
   }
+//   useEffect(()=>{
+//  if(jobs.length==0){
+ 
+//   dispatch(getJob())
+//  }
+//   },[])
 useEffect(()=>{
-if( location ||   jobs?.length===0){
-  {
-    const sortBy= searchParams.get("sortBy");
+if( location ||jobs.length===0){
+  navigate("/job-search")
+    // const sortBy= searchParams.get("sortBy");
     // eslint-disable-next-line no-unused-vars
-    let getParams={
-      
-      _sort: sortBy && "salary" && "experience" && "location",
-      _order:sortBy,
+    let newsearchparams={
+      params:{
+      job_title:searchParams.getAll("job_title"),
+      location:searchParams.getAll("location"),
+      experience:searchParams.getAll("experience")
+      }
+      // _sort: sortBy && "salary" && "experience" && "location",
+      // _order:sortBy,
     }
-  }
-  dispatch(getJob(getParams))
+    dispatch(getJob(newsearchparams))
+    // return navigate("/job-search")
+
+ 
+  
 }
-},[dispatch, jobs?.length, location, searchParams]);
+},[ location.search]);
 
 
 
- useEffect(()=>{
-  if(sortBy)
-  {
-    let params={};
-    sortBy && (params.sortBy= sortBy);
-    setSearchParams(params)
-  }
- },[setSearchParams, sortBy])
-console.log(jobs);
+//  useEffect(()=>{
+//   if(sortBy)
+//   {
+//     let params={};
+//     sortBy && (params.sortBy= sortBy);
+//     setSearchParams(params)
+//   }
+//  },[setSearchParams, sortBy])
+console.log("jobs from reducer",jobs);
 console.log(jobs[data])
 
   return (
@@ -167,7 +180,7 @@ console.log(jobs[data])
                         <span>Premium</span>
                         <span>1 week ago</span>
                       </Div>
-                      <H2>{item.title}</H2>
+                      <H2>{item.job_title}</H2>
                       <Company>
                           <span>{item.company_name}</span>
                       </Company>
@@ -219,24 +232,24 @@ console.log(jobs[data])
                     <span>1 week ago</span>
                   </Div>
                   
-                  <H2>{jobs[data].title}</H2>
+                  <H2>{jobs.length>0 &&jobs[data].job_title}</H2>
                   <Company>
-                      <span>{jobs[data].company_name}</span>
+                      <span>{jobs.length>0&&jobs[data].company_name}</span>
                   </Company>
                     <Jobcard>
                         <Jobcardlist> 
                           <span><FaLocationArrow/></span>
-                          <span>{jobs[data].location}</span>
+                          <span>{jobs.length>0&&jobs[data].location}</span>
                           </Jobcardlist>
                           <Jobcardlist>
                           <span><FaBriefcase/></span>
-                           <span>{jobs[data].experience}</span> 
+                           <span>{jobs.length>0&&jobs[data].experience}</span> 
                            
                            </Jobcardlist>
                     </Jobcard>
                     <Ul1>
-                      <Li1>{jobs[data].early}</Li1>
-                      <Li1>{jobs[data].reqular}</Li1>
+                      <Li1>{jobs.length>0&&jobs[data].early}</Li1>
+                      <Li1>{jobs.length>0&&jobs[data].reqular}</Li1>
                     </Ul1>
                     <JobhighLight1>
                         
