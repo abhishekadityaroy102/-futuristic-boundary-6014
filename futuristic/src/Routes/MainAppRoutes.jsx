@@ -26,6 +26,7 @@ const MainAppRoutes = () => {
      <Route path="/blogs" element={<Blog/>}></Route>
      <Route path="/cart" element={<AddToCart/>}></Route>
      <Route path="my-order" element={<Myorder/>}></Route>
+     <Route path="/blogs"  element={<Blog/>} />
     </Routes>
   )
 }
