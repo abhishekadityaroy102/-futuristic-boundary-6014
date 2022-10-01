@@ -1,25 +1,69 @@
+/* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react'
-import styled from "styled-components"
+import styled from "styled-components";
+import { useLocation } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { FaPen ,FaLocationArrow ,FaTasks,FaShareAlt,FaBriefcase,FaAngleDown ,FaRegBookmark} from "react-icons/fa";
 import {useSelector,useDispatch} from "react-redux";
 import { getJob } from '../../Redux/AppControl/action';
 
 const Job = () => {
 const [data,setData]= useState(0);
-const [apply, setApply]= useState([])
+const [apply, setApply]= useState(false);
+const navigate= useNavigate();
 const jobs= useSelector((state)=>state.Appcontrol.jobs);
-
+const [searchParams, setSearchParams] = useSearchParams();
+const initialSortBy = searchParams.getAll("sortBy");
+const [sortBy, setSortBy] = useState(initialSortBy[0] || "");
+// const [searchParams]=useSearchParams()
+const location = useLocation();
 const dispatch=useDispatch();
+   
+
+    const handleSort=(e)=>{
+          setSortBy(e.target.value)
+    }
+
+
+
+
   const handleApply=()=>{
-    
-      alert("something write")
+      if(Apply){
+        navigate("/")
+      }
+      setApply("")
+     
+     
+     alert("applied successful")
+     
   }
 useEffect(()=>{
-if(jobs.length===0){
-  dispatch(getJob())
+if( location ||   jobs?.length===0){
+  {
+    const sortBy= searchParams.get("sortBy");
+    // eslint-disable-next-line no-unused-vars
+    let getParams={
+      
+      _sort: sortBy && "salary" && "experience" && "location",
+      _order:sortBy,
+    }
+  }
+  dispatch(getJob(getParams))
 }
-},[dispatch, jobs.length])
-console.log(jobs)
+},[dispatch, jobs?.length, location, searchParams]);
+
+
+
+ useEffect(()=>{
+  if(sortBy)
+  {
+    let params={};
+    sortBy && (params.sortBy= sortBy);
+    setSearchParams(params)
+  }
+ },[setSearchParams, sortBy])
+console.log(jobs);
+console.log(jobs[data])
 
   return (
 
@@ -41,21 +85,55 @@ console.log(jobs)
             <Filter>
               <Filter1>Filter By</Filter1>
               <Filterlist>
-                <Unorderlist>
+                <Unorderlist  onClick={handleSort}>
                   <List>
-                    <Filterbutton >Location</Filterbutton>
+                    <Filterbutton >
+                    <input
+                        type="radio"
+                             value="location"
+                          name="sortBy"
+                       defaultChecked={sortBy === "location"}/>
+                         <label>Location</label>
+                          
+                      </Filterbutton>
                      <Arrow><FaAngleDown/></Arrow>
                   </List>
                   <List>
-                    <Filterbutton>Experience</Filterbutton>
+                    <Filterbutton>
+                    <input
+                        type="radio"
+                             value="experience"
+                          name="sortBy"
+                       defaultChecked={sortBy === "experience"}/>
+                         <label>Experience</label>  
+                      
+                      </Filterbutton>
                     <Arrow><FaAngleDown/></Arrow>
                   </List>
                   <List>
-                    <Filterbutton>Salary</Filterbutton>
+                    <Filterbutton>
+
+                    <input
+                        type="radio"
+                             value="salary"
+                          name="sortBy"
+                       defaultChecked={sortBy === "salary"}/>
+
+                        <label>Salary</label> 
+                      
+                      </Filterbutton>
                     <Arrow><FaAngleDown/></Arrow>
                   </List>
                   <List>
-                    <Filterbutton>more filters</Filterbutton>
+                    <Filterbutton>
+                           <input
+                            type="radio"
+                             value="morefilters"
+                            name="sortBy"
+                           defaultChecked={sortBy === "morefilters"}/>
+                       <label> more filters</label> 
+                      
+                      </Filterbutton>
                     <Arrow><FaAngleDown/></Arrow>
                   </List>
                 </Unorderlist>
@@ -84,12 +162,12 @@ console.log(jobs)
           <Left  >
             { jobs.length >0 && jobs.map((item,index)=>{
 
-              return  <Box onClick={()=> setData(index,item) }  key={item.id}>
+              return  <Box onClick={()=> setData(index) }  key={item.id}>
                       <Div>
                         <span>Premium</span>
                         <span>1 week ago</span>
                       </Div>
-                      <H2>{item.job_title}</H2>
+                      <H2>{item.title}</H2>
                       <Company>
                           <span>{item.company_name}</span>
                       </Company>
@@ -112,7 +190,12 @@ console.log(jobs)
                             <span></span>
                             <Apply>
                               <Applybutton  >
-                                <button style={{fontSize:"15px", fontWeight:"bold",color:"blue"}} onClick={handleApply} >Apply</button>
+                                <button style={{fontSize:"15px", fontWeight:"bold",color:"blue"}} onClick={handleApply} >
+                                Apply
+                                  
+                                  
+                                  
+                                  </button>
                               </Applybutton>
                             </Apply>
                         </JobhighLight>
@@ -127,39 +210,42 @@ console.log(jobs)
 
           <Right>
           
-             { data}
+             {/* {jobs[data].company_name} */}
              
-             <Jobdetil>
+             <Jobdetil >
              <Box>
                   <Div>
                     <span>Premium</span>
                     <span>1 week ago</span>
                   </Div>
                   
-                  <H2>DG - Process Developer - Customer Service</H2>
+                  <H2>{jobs[data].title}</H2>
                   <Company>
-                      <span>Genpact India Pvt Ltd.</span>
+                      <span>{jobs[data].company_name}</span>
                   </Company>
                     <Jobcard>
                         <Jobcardlist> 
                           <span><FaLocationArrow/></span>
-                          <span>Bangalore</span>
+                          <span>{jobs[data].location}</span>
                           </Jobcardlist>
                           <Jobcardlist>
                           <span><FaBriefcase/></span>
-                           <span>0 to 4 yrs</span> 
+                           <span>{jobs[data].experience}</span> 
                            
                            </Jobcardlist>
                     </Jobcard>
                     <Ul1>
-                      <Li1>Be an Early Applicant</Li1>
-                      <Li1>Regular</Li1>
+                      <Li1>{jobs[data].early}</Li1>
+                      <Li1>{jobs[data].reqular}</Li1>
                     </Ul1>
                     <JobhighLight1>
                         
                         <Apply1>
                           <Applybutton1>
-                            <button  style={{fontSize:"15px", fontWeight:"bold",color:"blue"}} onClick={handleApply}>Apply</button>
+                            <button  style={{fontSize:"15px", fontWeight:"bold",color:"blue"}} onClick={handleApply}>
+                              {/* { apply ? "Apply": "Applied"} */}
+                              Apply
+                              </button>
                           </Applybutton1>
                         </Apply1>
                         <Ul2>
