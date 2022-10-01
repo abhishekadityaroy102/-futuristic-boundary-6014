@@ -127,7 +127,7 @@ console.log(jobs)
 
           <Right>
           
-             { data} 
+             { data}
              
              <Jobdetil>
              <Box>
@@ -135,6 +135,7 @@ console.log(jobs)
                     <span>Premium</span>
                     <span>1 week ago</span>
                   </Div>
+                  
                   <H2>DG - Process Developer - Customer Service</H2>
                   <Company>
                       <span>Genpact India Pvt Ltd.</span>
