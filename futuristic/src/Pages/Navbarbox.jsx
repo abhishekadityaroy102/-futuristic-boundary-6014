@@ -1,30 +1,32 @@
 import { Box, HStack,Popover,PopoverArrow,PopoverBody,PopoverContent,PopoverTrigger,Text } from '@chakra-ui/react'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import styles from "../Component/Homepage/Navlinkfornavbar.module.css"
 const Navbarbox = () => {
     const navigate=useNavigate()
   return (
-    <div>
-        <HStack>
-            <Box as="button" onClick={()=>navigate("/")}>
+    <div className={styles.Navlink_wrap}>
+        <HStack display="flex" justifyContent="space-evenly" height="40px">
+        <Box as="button" borderBottom="2px" borderBottomColor="white" onClick={()=>navigate("/courses")} _hover={{borderBottomColor:"blue"}}>
                 <Text>Home</Text>
                 
             </Box>
             <Popover trigger='hover' placement='bottom-start'>
   <PopoverTrigger trigger="hover">
-   <Text>Job</Text>
+  <Box as="button" borderBottom="2px" borderBottomColor="white"  _hover={{borderBottomColor:"blue"}}>
+    <Text>JOBS</Text>
+    </Box>
   </PopoverTrigger>
   <PopoverContent>
     
     <PopoverArrow />
     <PopoverBody>
      
-       <Box onClick={()=>navigate("/search")} _hover={{color:"blue"}}>
-        <Text>Search</Text>
+    <Box  borderLeft="2px" borderLeftColor="white" onClick={()=>navigate("/search")} _hover={{borderLeftColor:"blue"}}>
+        <Text as="button">Search</Text>
        </Box>
-       <Box onClick={()=>navigate("/job-search")} _hover={{color:"blue"}}>
-        <Text>Jobs</Text>
+       <Box  borderLeft="2px" borderLeftColor="white" onClick={()=>navigate("/job-search")} _hover={{borderLeftColor:"blue"}}>
+        <Text as="button">Jobs</Text>
        </Box>
    
     </PopoverBody>
@@ -33,22 +35,36 @@ const Navbarbox = () => {
            
             <Popover trigger='hover' placement='bottom-start'>
   <PopoverTrigger trigger="hover">
-   <Text>Courses</Text>
+  <Box as="button" borderBottom="2px" borderBottomColor="white"  _hover={{borderBottomColor:"blue"}}>
+    <Text>COURSES</Text>
+    </Box>
   </PopoverTrigger>
   <PopoverContent>
     
     <PopoverArrow />
     <PopoverBody>
-       <div className=".Popover_link" onClick={()=>navigate("/search")}>Search</div>
-       <div onClick={()=>navigate("/job-search")}>Job</div>
+    <Box borderLeft="2px" borderLeftColor="white" onClick={()=>navigate("/courses")} _hover={{borderLeftColor:"blue",color:"white.400"}} >
+        <Text as="button">Sales and Marketing</Text>
+       </Box>
+       <Box borderLeft="2px" borderLeftColor="white" onClick={()=>navigate("/courses")} _hover={{borderLeftColor:"blue"}}>
+        <Text as="button">Information and Technology</Text>
+       </Box>
+       <Box borderLeft="2px" borderLeftColor="white" onClick={()=>navigate("/courses")} _hover={{borderLeftColor:"blue"}} >
+        <Text as="button">Operation Managment</Text>
+       </Box>
+       <Box borderLeft="2px" borderLeftColor="white" onClick={()=>navigate("/courses")} _hover={{borderLeftColor:"blue"}}>
+        <Text as="button">View All</Text>
+       </Box>
+
+     
     </PopoverBody>
   </PopoverContent>
 </Popover>
-            <Box as="button" onClick={()=>navigate("/courses")} _hover={{color:"blue"}}>
-                <Text>Courses</Text>
+<Box borderBottom="2px" borderBottomColor="white" onClick={()=>navigate("/courses")} _hover={{borderBottomColor:"blue"}} as="button">
+                <Text>Secking Assistance</Text>
                 
             </Box>
-            <Box as="button" onClick={()=>navigate("/blogs")}>
+            <Box borderBottom="2px" borderBottomColor="white" onClick={()=>navigate("/courses")} _hover={{borderBottomColor:"blue"}} as="button">
                 <Text>Blogs</Text>
                 
             </Box>

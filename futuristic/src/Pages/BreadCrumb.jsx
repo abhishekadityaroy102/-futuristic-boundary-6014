@@ -16,18 +16,30 @@ const BreadCrumb = () => {
         
          <Breadcrumb separator='|'>
   <BreadcrumbItem>
-    <BreadcrumbLink href='#'>Node Js</BreadcrumbLink>
+    <BreadcrumbLink href='#' style={{
+              fontWeight: 'bold',
+              color: '#8652ff'
+            }}>Node Js</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem>
-    <BreadcrumbLink href='#'>Full-stack Development</BreadcrumbLink>
+    <BreadcrumbLink href='#' style={{
+              fontWeight: 'bold',
+              color: '#8652ff'
+            }}>Full-stack Development</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem isCurrentPage>
-    <BreadcrumbLink href='#'>Finance</BreadcrumbLink>
+    <BreadcrumbLink href='#' style={{
+              fontWeight: 'bold',
+              color: '#8652ff'
+            }}>Finance</BreadcrumbLink>
   </BreadcrumbItem>
   <BreadcrumbItem>
-    <BreadcrumbLink href='#'>HR</BreadcrumbLink>
+    <BreadcrumbLink href='#' style={{
+              fontWeight: 'bold',
+              color: '#8652ff'
+            }}>HR</BreadcrumbLink>
   </BreadcrumbItem>
 </Breadcrumb>
 </div>

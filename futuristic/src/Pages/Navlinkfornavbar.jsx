@@ -13,6 +13,7 @@ import {
     PopoverAnchor,Text,Button,useDisclosure,MenuButton
   } from '@chakra-ui/react'
 import Homepage from '../Component/Homepage/Homepage'
+import styles from "../Component/Homepage/Navlinkfornavbar.module.css"
 import { NavLink, useNavigate } from 'react-router-dom'
 import Blog from './Blog'
 import Jobs from '../Component/Jobsection/Jobs'
@@ -25,7 +26,7 @@ const Navlinkfornavbar = () => {
     const [blogs,setblogs]=useState(false)
   return (
     
-    <div>
+    <div className={styles.Navlink_wrap}>
      <NavLink to="/">
       <div>Home</div>
      </NavLink>
