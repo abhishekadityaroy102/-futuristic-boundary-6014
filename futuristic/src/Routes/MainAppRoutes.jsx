@@ -7,7 +7,9 @@ import Dashboard from '../Component/Dashboard/Dashboard'
 import Homepage from '../Component/Homepage/Homepage'
 import Jobs from '../Component/Jobsection/Jobs'
 import Login from '../Component/LoginSignup/Login'
+import Signup from '../Component/LoginSignup/Signup'
 import Profile from '../Component/Profile/Profile'
+import Blog from '../Pages/Blog'
 import Search from '../Pages/Search'
 import RequireAuthRoute from './RequireAuthRoute'
 const MainAppRoutes = () => {
@@ -19,7 +21,9 @@ const MainAppRoutes = () => {
      <Route path="/search" element={<Search/>}></Route>
      <Route path="/courses" element={<Courses/>}></Route>
      <Route path="/login" element={<Login/>}></Route>
+     <Route path="/signup" element={<Signup/>}></Route>
      <Route path="/user-profile" element={<RequireAuthRoute><Profile/></RequireAuthRoute>}></Route>
+     <Route path="/blogs" element={<Blog/>}></Route>
      <Route path="/cart" element={<AddToCart/>}></Route>
      <Route path="my-order" element={<Myorder/>}></Route>
     </Routes>

@@ -66,17 +66,17 @@ const NavbarAuth = () => {
     
     <PopoverArrow />
     <PopoverBody>
-    <Box onClick={()=>navigate("/search")} _hover={{color:"blue"}}>
+    <Box onClick={()=>navigate("/user-profile")} _hover={{color:"blue"}}>
         <Text>My profile</Text>
        </Box>
-       <Box onClick={()=>navigate("/job-search")} _hover={{color:"blue"}}>
+       <Box onClick={()=>navigate("/login")} _hover={{color:"blue"}}>
         <Text>Logout</Text>
        </Box>
     </PopoverBody>
   </PopoverContent>
 </Popover>
           </Box>
-         <Box>Add to cart</Box>
+         <Box onClick={()=>navigate("/cart")}>Add to cart</Box>
         </HStack>
       </HStack>
        <HStack>
