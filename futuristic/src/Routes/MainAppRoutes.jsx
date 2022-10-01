@@ -8,6 +8,7 @@ import Homepage from '../Component/Homepage/Homepage'
 import Jobs from '../Component/Jobsection/Jobs'
 import Login from '../Component/LoginSignup/Login'
 import Profile from '../Component/Profile/Profile'
+import Blog from '../Pages/Blog'
 import Search from '../Pages/Search'
 import RequireAuthRoute from './RequireAuthRoute'
 const MainAppRoutes = () => {
@@ -22,6 +23,7 @@ const MainAppRoutes = () => {
      <Route path="/user-profile" element={<RequireAuthRoute><Profile/></RequireAuthRoute>}></Route>
      <Route path="/cart" element={<AddToCart/>}></Route>
      <Route path="my-order" element={<Myorder/>}></Route>
+     <Route path="/blogs"  element={<Blog/>} />
     </Routes>
   )
 }
