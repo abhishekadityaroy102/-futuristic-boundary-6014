@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { forwardRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import {NavLink, useNavigate, useSearchParams} from "react-router-dom"
 import MainAppRoutes from '../Routes/MainAppRoutes'
 import styles from "../Component/Homepage/Navbar.module.css"
@@ -20,6 +21,8 @@ import Navlinkfornavbar from './Navlinkfornavbar'
 import {FaBell,FaShoppingCart} from 'react-icons/fa';
 import Navbarbox from './Navbarbox'
 import { experiencedata, locationdata, useQuerydata } from '../Component/Homepage/useQuerydata'
+import NavbarAuth from './NavbarAuth'
+import { setdata } from '../Redux/JobSearchcontrol/action'
 export const inputstyle={
   width: "100%",
 padding: "7px",
@@ -35,23 +38,25 @@ const Navbar = () => {
     location:"",
     experience:""
   })
-  const [searchParams,setsearchParams]=useSearchParams()
-  const inititaljob_title=searchParams.getAll("job_title");
-  const initiallocation=searchParams.getAll("location");
-  const initialexperience=searchParams.getAll("experience")
-  const [job_title,setjob_title]=useState(inititaljob_title[0]||"")
-  const [location,setlocation]=useState(initiallocation[0]||"");
-  const [experience,setexperience]=useState(initialexperience[0]||"")
+  const {isAuth}=useSelector((state)=>state.Authreducer)
+  const dispatch=useDispatch()
+  // const [searchParams,setsearchParams]=useSearchParams()
+  // const inititaljob_title=searchParams.getAll("job_title");
+  // const initiallocation=searchParams.getAll("location");
+  // const initialexperience=searchParams.getAll("experience")
+  // const [job_title,setjob_title]=useState(inititaljob_title[0]||"")
+  // const [location,setlocation]=useState(initiallocation[0]||"");
+  // const [experience,setexperience]=useState(initialexperience[0]||"")
   const handlechange=(e)=>{
     const {name,value}=e.target
     settext({...text,[name]:value})
   }
   const handlesearchjobs=()=>{
-  
-    setexperience(text.experience)
-    setjob_title(text.job_title)
-    setlocation(text.location)
-    console.log(text)
+  dispatch(setdata(text))
+    // setexperience(text.experience)
+    // setjob_title(text.job_title)
+    // setlocation(text.location)
+    // console.log(text)
     onClose()
     return navigate("/job-search")
  
@@ -60,16 +65,16 @@ const Navbar = () => {
    
   }
 
-  useEffect(()=>{
-    if(location||job_title||experience){
-      let params={};
-      job_title&&(params.job_title=job_title);
-      location&&(params.location=location);
-      experience&&(params.experience=experience)
-    setsearchParams(params)
+  // useEffect(()=>{
+  //   if(location||job_title||experience){
+  //     let params={};
+  //     job_title&&(params.job_title=job_title);
+  //     location&&(params.location=location);
+  //     experience&&(params.experience=experience)
+  //   setsearchParams(params)
     
-    }
-  },[job_title,setsearchParams,location,experience])
+  //   }
+  // },[job_title,setsearchParams,location,experience])
   const {data}=useQuerydata(text.job_title)
   return (
     <div>
@@ -85,7 +90,7 @@ const Navbar = () => {
       </div> */}
      <HStack display="flex" justifyContent="space-around">
       <HStack>
-        <Box>
+        <Box as="button" onClick={()=>navigate("/")}>
        
        <div className={styles.Navbar_logo_wrap}>
        <img src="https://www.shine.com/next/static/images/shine-logo.png"></img>
@@ -100,13 +105,15 @@ const Navbar = () => {
         </Box>
       </HStack>
       <HStack>
-          <Box as="button" bg="white" borderRadius="4px" borderWidth='2px' width="70px" _hover={{bg:"rgb(134,82,255)",color:"white"}}>
-           Login
-           </Box>
-           <Box as="button" bg="rgb(134,82,255)" color="white" borderRadius="4px" width="120px">
-            REGISTER
-           </Box>
-         
+          {
+            isAuth ?<NavbarAuth/>:(<HStack><Box as="button" bg="white" borderRadius="4px" borderWidth='2px' width="70px" _hover={{bg:"rgb(134,82,255)",color:"white"}} onClick={()=>navigate("/login")}>
+ Login
+            </Box>
+            <Box as="button" bg="rgb(134,82,255)" color="white" borderRadius="4px" width="120px" onClick={()=>navigate("/signup")}>
+             REGISTER
+            </Box></HStack>)
+          
+          }
            
             <Popover trigger='hover' placement='bottom-start'>
   <PopoverTrigger trigger="hover">
@@ -127,7 +134,7 @@ const Navbar = () => {
 
             
           
-          <Box as="button">
+          <Box as="button" onClick={()=>navigate("/cart")}>
              <FaShoppingCart width="50px"/>
           </Box>
       {/* </div> */}
@@ -139,7 +146,7 @@ const Navbar = () => {
       </div>
     <Divider/>
       <div>
-      <Navbarbox/>
+      <Navbarbox onclose={onOpen}/>
       </div>
       
     

@@ -2,7 +2,7 @@ import { Box, HStack,Popover,PopoverArrow,PopoverBody,PopoverContent,PopoverTrig
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from "../Component/Homepage/Navlinkfornavbar.module.css"
-const Navbarbox = () => {
+const Navbarbox = ({onclose}) => {
     const navigate=useNavigate()
   return (
     <div className={styles.Navlink_wrap}>
@@ -22,7 +22,7 @@ const Navbarbox = () => {
     <PopoverArrow />
     <PopoverBody>
      
-    <Box  borderLeft="2px" borderLeftColor="white" onClick={()=>navigate("/search")} _hover={{borderLeftColor:"blue"}}>
+    <Box  borderLeft="2px" borderLeftColor="white" onClick={()=>onclose()} _hover={{borderLeftColor:"blue"}}>
         <Text as="button">Search</Text>
        </Box>
        <Box  borderLeft="2px" borderLeftColor="white" onClick={()=>navigate("/job-search")} _hover={{borderLeftColor:"blue"}}>
