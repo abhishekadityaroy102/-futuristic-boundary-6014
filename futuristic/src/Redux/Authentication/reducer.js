@@ -1,6 +1,8 @@
 import * as types from "./action.types"
 const initialstate={
-  isAuth:true
+  isAuth:false,
+  isLoading:false,
+  isError:false
 }
 export const reducer=(state=initialstate,{type,payload})=>{
       switch(type){
@@ -8,10 +10,15 @@ export const reducer=(state=initialstate,{type,payload})=>{
           return state
         }
         case types.GET_LOGIN_SUCCESS:{
-          return state
+          console.log(payload)
+          return {
+            ...state,isAuth:true
+          }
         }
         case types.GET_LOGIN_FAILURE:{
-          return state
+          return {
+            ...state,isError:true,isAuth:false
+          }
         }
          case types.GET_LOGOUT_REQUEST:{
           return state

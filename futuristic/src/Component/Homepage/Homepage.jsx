@@ -87,10 +87,10 @@ const Homepage = () => {
           >
             {/* {">"} */}
           </Input>
-
+{/* 
           <Text fontWeight={600} m={"auto"}>{`${counter + 1} / ${
             craouselData.length
-          }`}</Text>
+          }`}</Text> */}
         </Flex>
       </Box>
       <Box   width={"100%"} height={"200px"}>

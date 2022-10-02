@@ -64,7 +64,7 @@ const NavbarAuth = () => {
            <PopoverArrow />
           <PopoverBody>
             <VStack>
-             <Box as="button" onClick={()=>navigate("/my_profile")} _hover={{color:"blue"}}>
+             <Box as="button" onClick={()=>navigate("/user-profile")} _hover={{color:"blue"}}>
                <Text>My profile</Text>
               </Box>
                <Box as="button" onClick={handlelogout} _hover={{color:"blue"}}>

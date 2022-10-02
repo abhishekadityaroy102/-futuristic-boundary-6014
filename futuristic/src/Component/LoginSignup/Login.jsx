@@ -1,29 +1,38 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
+import { loginaction } from "../../Redux/Authentication/action";
 
 export default function Login() {
     let navigate = useNavigate();
+    const location=useLocation()
+    console.log(location.state)
+    const dispatch=useDispatch()
     const [data, setData] = useState([]);
-    const [email, setEmail] = useState([]);
-    const [password, setPassword] = useState([]);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    
+    // let getData = async () => {
+    //     let res = await fetch("https://postdata-rest-api.herokuapp.com/post");
+    //     let res_data = await res.json();
+    //     setData(res_data);
+    // };
+    // useEffect(() => {
+    //     getData();
+    // }, []);
 
-    let getData = async () => {
-        let res = await fetch("https://postdata-rest-api.herokuapp.com/post");
-        let res_data = await res.json();
-        setData(res_data);
-    };
-    useEffect(() => {
-        getData();
-    }, []);
 
-
-    let handleSubmit = () => {
-        data.map((e) => {
-            if (email == e.email && password == e.pass) {
-                navigate("/");
-                alert("Login successful");
-            }
-        });
+    let handlesubmit = (e) => {
+        e.preventDefault()
+        dispatch(loginaction(email,password)).then(()=>{
+           return  navigate("/")
+        })
+        // data.map((e) => {
+        //     if (email == e.email && password == e.pass) {
+        //         navigate("/");
+        //         alert("Login successful");
+        //     }
+        // });
     };
 
     const handlego=()=>{
@@ -52,7 +61,7 @@ export default function Login() {
             <div
                 className="container"
             >
-                <form>
+                <form onSubmit={handlesubmit}>
                     <div className="mb-4">
                         <input
                             onChange={(e) => setEmail(e.target.value)}
@@ -104,7 +113,7 @@ export default function Login() {
 
                     </div>
                     <button
-                        onClick={handleSubmit}
+                        // onClick={handleSubmit}
                         type="submit"
                         className="btn btn-dark"
                         style={{
