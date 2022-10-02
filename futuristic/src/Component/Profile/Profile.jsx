@@ -1,9 +1,11 @@
 import {  useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 
 export default function Profile(){
     const [data, setData] = useState([]);
-
+    const {userdata}=useSelector((state)=>state.Authreducer);
+    console.log("userdata from after login",userdata)
     let getData = async () => {
         let res = await fetch("https://postdata-rest-api.herokuapp.com/post");
         let res_data = await res.json();
@@ -32,13 +34,13 @@ export default function Profile(){
                         {/* profile details */}
                    <div style={{height:"150px",marginLeft:"15%",textAlign:"start"}}>
 
-                   {data && data.map((el)=>
-                    <div key={el.id}>
-                <h1 style={{color:"blue",marginBottom:"10px",marginTop:"10px"}}>{data[0].name || "Not mentioned"}</h1>
-                <h3 style={{marginTop:"10px",marginBottom:"10px",color:"blue",cursor:"pointer"}}>{data[0].email || "Not mentioned"}</h3>
-                <h3 style={{color:"blue"}}>{data[0].mobile || "Not mentioned"} <span style={{color:"black",fontSize:"14PX",cursor:"pointer"}} >verify </span></h3>
+                   {userdata && 
+                    <div >
+                <h1 style={{color:"blue",marginBottom:"10px",marginTop:"10px"}}>{userdata.name || "Not mentioned"}</h1>
+                <h3 style={{marginTop:"10px",marginBottom:"10px",color:"blue",cursor:"pointer"}}>{userdata.email || "Not mentioned"}</h3>
+                <h3 style={{color:"blue"}}>{userdata.mobile || "Not mentioned"} <span style={{color:"black",fontSize:"14PX",cursor:"pointer"}} >verify </span></h3>
                     </div>
-                )}
+                }
 
 
                    </div>
