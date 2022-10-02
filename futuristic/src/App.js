@@ -11,9 +11,8 @@ function App() {
   const {isAuth}=useSelector((state)=>state.Authreducer)
   return <div className="App">
      <ChakraProvider>
-      {
-        isAuth ?<NavbarAuth/>:<Navbar/>
-      }
+      <Navbar/>
+     
    </ChakraProvider>
     
   </div>;

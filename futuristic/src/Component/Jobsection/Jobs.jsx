@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef} from 'react'
 import styled from "styled-components";
 import { useLocation } from 'react-router-dom';
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -8,15 +8,43 @@ import {useSelector,useDispatch} from "react-redux";
 import { getJob } from '../../Redux/AppControl/action';
 
 const Job = () => {
+  const Location = useLocation();
 const [data,setData]= useState(0);
+const searchdata=useSelector((state)=>state.jobsearchreducer)
+const {job_title,location,experience}=searchdata
+console.log("searchdata",searchdata)
 const [apply, setApply]= useState(false);
 const navigate= useNavigate();
 const jobs= useSelector((state)=>state.Appcontrol.jobs);
-const [searchParams] = useSearchParams();
+// const [searchParams] = useSearchParams();
+
+const ref=useRef({job_title:"1",location:"11",experience:"1"})
+const [searchParams,setsearchParams]=useSearchParams()
+  const inititaljob_title=searchParams.getAll("job_title");
+  const initiallocation=searchParams.getAll("location");
+  const initialexperience=searchParams.getAll("experience")
+  const [job_title1,setjob_title]=useState(inititaljob_title[0]||"")
+  const [location1,setlocation]=useState(initiallocation[0]||"");
+  const [experience1,setexperience]=useState(initialexperience[0]||"")
+
+
+useEffect(()=>{
+  if(ref.current!=searchdata){
+    setjob_title(job_title)
+    setlocation(location);
+    setexperience(experience)
+    ref.current=searchdata
+  }
+},[searchdata])
+
+
+
+
 // const initialSortBy = searchParams.getAll("sortBy");
 const [sortBy, setSortBy] = useState("");
 // const [searchParams]=useSearchParams()
-const location = useLocation();
+
+
 const dispatch=useDispatch();
 
 
@@ -37,6 +65,34 @@ const dispatch=useDispatch();
     //  alert("applied successful")
      
   }
+
+  useEffect(()=>{
+    if(location1||job_title1||experience1){
+      let params={};
+      job_title1&&(params.job_title=job_title1);
+      location1&&(params.location=location1);
+      experience1&&(params.experience=experience1)
+    setsearchParams(params)
+    
+    }
+  },[job_title1,setsearchParams,location1,experience1])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //   useEffect(()=>{
 //  if(jobs.length==0){
  
@@ -44,8 +100,8 @@ const dispatch=useDispatch();
 //  }
 //   },[])
 useEffect(()=>{
-if( location ||jobs.length===0){
-  navigate("/job-search")
+if( Location ||jobs.length===0){
+  // navigate("/job-search")
     // const sortBy= searchParams.get("sortBy");
     // eslint-disable-next-line no-unused-vars
     let newsearchparams={
@@ -63,7 +119,7 @@ if( location ||jobs.length===0){
  
   
 }
-},[ location.search]);
+},[ Location.search]);
 
 
 
@@ -75,11 +131,13 @@ if( location ||jobs.length===0){
 //     setSearchParams(params)
 //   }
 //  },[setSearchParams, sortBy])
-console.log("jobs from reducer",jobs);
-console.log(jobs[data])
+console.log("searchdata",searchdata)
+console.log("ref",ref.current)
+console.log("job_title",job_title,job_title1)
+console.log("location",location,location1)
 
   return (
-
+   <div>{jobs.length>0 ?
     <Gcontainer>
       { /* job initial stage  */}
       <Container>
@@ -448,7 +506,13 @@ console.log(jobs[data])
 
           </Right>
         </Secondcontainer>
-    </Gcontainer>
+    </Gcontainer>:(
+      <div>
+        <h1>Sorry ,
+          No such type of job available right now !</h1>
+      </div>
+    )}
+    </div>
   )
 }
 
