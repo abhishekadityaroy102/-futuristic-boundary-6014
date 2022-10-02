@@ -83,15 +83,15 @@ export default function Profile(){
             {/* rightdiv */}
             <div style={{ textAlign: "left",width:"65%",marginTop:"7%"}}>
                 {/* data from api */}
-                {data && data.map((el)=>
-                    <div key={el.id}>
-                <p style={{marginBottom:"13px"}}>{data[0].name || "Not mentioned"}</p>
-                <p style={{marginBottom:"13px"}}>{data[0].email || "Not mentioned"}</p>
-                <p style={{marginBottom:"13px"}}>{data[0].mobile || "Not mentioned"}</p>
-                <p style={{marginBottom:"13px"}}>{data[0].location || "Not mentioned"}</p>
+                {userdata && 
+                    <div >
+                <p style={{marginBottom:"13px"}}>{userdata.name || "Not mentioned"}</p>
+                <p style={{marginBottom:"13px"}}>{userdata.email || "Not mentioned"}</p>
+                <p style={{marginBottom:"13px"}}>{userdata.mobile || "Not mentioned"}</p>
+                <p style={{marginBottom:"13px"}}>{userdata.location || "Not mentioned"}</p>
                 <p style={{marginBottom:"13px"}}>Not mentioned</p>
                     </div>
-                )}
+                }
                 
             </div>
             
@@ -125,12 +125,12 @@ export default function Profile(){
             height:"auto",marginTop:"50px",width:"90%",marginLeft:"9%"}}>
             <div style={{ textAlign: "left",marginLeft:"5%",width:"30%",marginBottom:"10PX"}}>
             <h1 style={{marginBottom:"20PX"}}>Education</h1>
-            {data && data.map((el)=>
-                    <div key={el.id}>
-                <h4>{data[0].qualification || "Not mentioned"}</h4>
+            {userdata &&
+                    <div >
+                <h4>{userdata.qualification || "Not mentioned"}</h4>
                
                     </div>
-                )}
+                }
            
             </div>    
             </div>
