@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
-  const [name, setName] = useState([]);
-  const [email, setEmail] = useState([]);
-  const [password, setPassword] = useState([]);
-  const [location, setLocation] = useState([]);
-  const [qualification, setQualification] = useState([]);
-  const [mobile, setMobile] = useState([]);
-  const [skill, setSkills] = useState([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [location, setLocation] = useState("");
+  const [qualification, setQualification] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [skill, setSkills] = useState("");
 
   const navigate = useNavigate();
 
