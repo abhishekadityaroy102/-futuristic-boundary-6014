@@ -25,7 +25,7 @@ import { logoutaction } from '../Redux/Authentication/action'
 import { confirmAlert } from 'react-confirm-alert'
 const NavbarAuth = () => {
   const navigate=useNavigate()
-  const {isAuth}=useSelector((state)=>state.Authreducer)
+  const {isAuth,userdata}=useSelector((state)=>state.Authreducer)
   const dispatch=useDispatch()
   const handlelogout=()=>{
     confirmAlert({
@@ -55,7 +55,9 @@ const NavbarAuth = () => {
                <PopoverTrigger trigger="hover">
                 <Box border='2px' borderColor='gray.200'>
                   <HStack>
-              <Text>Hi, Abhishek kumar</Text><FaAngleDown/>
+                
+                  <Text>Hi,{userdata.name}</Text><FaAngleDown/>
+                
               </HStack>
               </Box>
              </PopoverTrigger>
