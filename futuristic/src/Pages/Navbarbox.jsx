@@ -22,10 +22,10 @@ const Navbarbox = ({onclose}) => {
     <PopoverArrow />
     <PopoverBody>
      
-    <Box  borderLeft="2px" borderLeftColor="white" onClick={()=>onclose()} _hover={{borderLeftColor:"blue"}}>
+    <Box  borderLeft="2px" borderLeftColor="white" onClick={()=>onclose()} _hover={{borderLeftColor:"blue",color:"blue"}}>
         <Text as="button">Search</Text>
        </Box>
-       <Box  borderLeft="2px" borderLeftColor="white" onClick={()=>navigate("/job-search")} _hover={{borderLeftColor:"blue"}}>
+       <Box  borderLeft="2px" borderLeftColor="white" onClick={()=>navigate("/job-search")} _hover={{borderLeftColor:"blue",color:"blue"}}>
         <Text as="button">Jobs</Text>
        </Box>
    

@@ -8,7 +8,9 @@ import {useSelector,useDispatch} from "react-redux";
 import { getJob } from '../../Redux/AppControl/action';
 
 const Job = () => {
+
   const Location = useLocation();
+  const {isAuth}=useSelector((state)=>state.Authreducer)
 const [data,setData]= useState(0);
 const searchdata=useSelector((state)=>state.jobsearchreducer)
 const {job_title,location,experience}=searchdata
@@ -27,7 +29,7 @@ const [searchParams,setsearchParams]=useSearchParams()
   const [location1,setlocation]=useState(initiallocation[0]||"");
   const [experience1,setexperience]=useState(initialexperience[0]||"")
 
-
+  
 useEffect(()=>{
   if(ref.current!=searchdata){
     setjob_title(job_title)
@@ -55,16 +57,17 @@ const dispatch=useDispatch();
 
 
 
-  const handleApply=()=>{
-    //   if(Apply){
-    //     navigate("/")
-    //   }
-    //   setApply("")
-     
-     
-    //  alert("applied successful")
-     
-  }
+   
+    const handleApply=()=>{
+      if(isAuth){
+        alert("Your Application has applied successfully")
+      }
+      else{
+        navigate("/login")
+      }
+    }
+  
+  
 
   useEffect(()=>{
     if(location1||job_title1||experience1){
@@ -137,7 +140,7 @@ console.log("job_title",job_title,job_title1)
 console.log("location",location,location1)
 
   return (
-   <div>{jobs.length>0 ?
+  
     <Gcontainer>
       { /* job initial stage  */}
       <Container>
@@ -261,7 +264,7 @@ console.log("location",location,location1)
                             <span></span>
                             <Apply>
                               <Applybutton  >
-                                <button style={{fontSize:"15px", fontWeight:"bold",color:"blue"}} onClick={handleApply} >
+                                <button style={{fontSize:"15px", fontWeight:"bold",color:"blue"}} onClick={()=>handleApply()} >
                                 Apply
                                   
                                   
@@ -279,7 +282,8 @@ console.log("location",location,location1)
                
           </Left>
 
-          <Right>
+          {
+            jobs.length>0 ?<Right>
           
              {/* {jobs[data].company_name} */}
              
@@ -313,7 +317,7 @@ console.log("location",location,location1)
                         
                         <Apply1>
                           <Applybutton1>
-                            <button  style={{fontSize:"15px", fontWeight:"bold",color:"blue"}} onClick={handleApply}>
+                            <button  style={{fontSize:"15px", fontWeight:"bold",color:"blue"}} onClick={()=>handleApply()}>
                               {/* { apply ? "Apply": "Applied"} */}
                               Apply
                               </button>
@@ -353,6 +357,7 @@ console.log("location",location,location1)
 
 
         {/* Job description */}
+        
          <Rightdetail>
           <h3 style={{textAlign:"start"}} >Job Details</h3>
           <Jobdetailtext>
@@ -504,15 +509,9 @@ console.log("location",location,location1)
 
                  </Key>
 
-          </Right>
+          </Right>:<div>Sorry , Not mathing your data</div>}
         </Secondcontainer>
-    </Gcontainer>:(
-      <div>
-        <h1>Sorry ,
-          No such type of job available right now !</h1>
-      </div>
-    )}
-    </div>
+    </Gcontainer>
   )
 }
 
