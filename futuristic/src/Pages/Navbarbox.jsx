@@ -7,7 +7,7 @@ const Navbarbox = ({onclose}) => {
   return (
     <div className={styles.Navlink_wrap}>
         <HStack display="flex" justifyContent="space-evenly" height="40px">
-        <Box as="button" borderBottom="2px" borderBottomColor="white" onClick={()=>navigate("/courses")} _hover={{borderBottomColor:"blue"}}>
+        <Box as="button" borderBottom="2px" borderBottomColor="white" onClick={()=>navigate("/")} _hover={{borderBottomColor:"blue"}}>
                 <Text>Home</Text>
                 
             </Box>

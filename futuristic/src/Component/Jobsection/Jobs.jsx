@@ -137,7 +137,7 @@ console.log("job_title",job_title,job_title1)
 console.log("location",location,location1)
 
   return (
-
+   <div>{jobs.length>0 ?
     <Gcontainer>
       { /* job initial stage  */}
       <Container>
@@ -506,7 +506,13 @@ console.log("location",location,location1)
 
           </Right>
         </Secondcontainer>
-    </Gcontainer>
+    </Gcontainer>:(
+      <div>
+        <h1>Sorry ,
+          No such type of job available right now !</h1>
+      </div>
+    )}
+    </div>
   )
 }
 
