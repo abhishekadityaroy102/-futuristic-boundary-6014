@@ -10,10 +10,10 @@ function App() {
 
   const {isAuth}=useSelector((state)=>state.Authreducer)
   return <div className="App">
-     <ChakraProvider>
+    
       <Navbar/>
      
-   </ChakraProvider>
+   
     
   </div>;
 

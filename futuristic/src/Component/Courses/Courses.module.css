@@ -1,0 +1,14 @@
+.coursesmainbox_wrap{
+    width: 100%;
+}
+.coursesmain_wrap{
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: space-around;
+    gap:30px;
+    margin:auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 70%;
+}

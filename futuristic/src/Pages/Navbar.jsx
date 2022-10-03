@@ -14,7 +14,7 @@ import {
   PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,Text,Button,Box, HStack, InputGroup, Input, InputRightAddon, VStack, Image, Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody,useDisclosure, DrawerCloseButton, Divider
+  PopoverAnchor,Text,Button,Box, HStack, InputGroup, Input, InputRightAddon, VStack, Image, Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody,useDisclosure, DrawerCloseButton, Divider, ChakraProvider
 } from '@chakra-ui/react'
 import BreadCrumb from './BreadCrumb'
 import Navlinkfornavbar from './Navlinkfornavbar'
@@ -77,6 +77,7 @@ const Navbar = () => {
   // },[job_title,setsearchParams,location,experience])
   const {data}=useQuerydata(text.job_title)
   return (
+    <ChakraProvider>
     <div>
       <div className={styles.Navbar_link_wrap}>
       {/* <div className={styles.Navbar_logo_and_search}>
@@ -203,6 +204,7 @@ const Navbar = () => {
         </DrawerContent>
       </Drawer>
     </div>
+    </ChakraProvider>
   )
 }
 
