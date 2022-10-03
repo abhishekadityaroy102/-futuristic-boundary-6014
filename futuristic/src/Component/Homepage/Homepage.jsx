@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Box,Input, Image, Flex, Button,Text,} from "@chakra-ui/react";
 import Footer from '../../Pages/Footer';
+import Courseside from './Courseside';
 // import {MdAssessment} from "react-icons/md";
 const Homepage = () => {
   const [counter, setCounter] = useState(0);
@@ -153,6 +154,9 @@ const Homepage = () => {
 
       </Box>
     </Box>
+    <div>
+      <Courseside/>
+    </div>
     <div>
       <Footer/>
     </div>
