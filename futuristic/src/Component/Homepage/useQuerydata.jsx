@@ -13,7 +13,7 @@ export const useQuerydata=(query)=>{
    useEffect(()=>{
     let timeid
     if(query){
-        timeid=setTimeout(()=>getdata(query),300)
+        timeid=setTimeout(()=>getdata(query),200)
     }
     return ()=>clearTimeout(timeid)
    },[query])

@@ -5,8 +5,10 @@ import styles from "./Courseside.module.css"
 import {useNavigate} from "react-router-dom"
 import {GrCaretPrevious,GrCaretNext} from "react-icons/gr"
 import { Box, Divider, Text } from '@chakra-ui/react'
+import Skelleton from '../../Pages/Skelleton'
 const Courseside = () => {
     const ref=useRef(null)
+    const fakedata=[1,2,3,4,5,6,7]
     const navigate=useNavigate()
     const [coursedata,setcoursedata]=useState([])
    
@@ -17,6 +19,7 @@ const Courseside = () => {
         return axios.get("https://6333cb88433198e79dc9559d.mockapi.io/courses?page=1&limit=7")
     }
     useEffect(()=>{
+        
         getcourseHome().then((r)=>setcoursedata(r.data))
     },[])
   return (
@@ -29,7 +32,7 @@ const Courseside = () => {
      <GrCaretPrevious fontSize="40px"/></div>  
         <div ref={ref} className={styles.courseslidebox}>
             {
-            coursedata.length>0&&coursedata.map((el)=><CoursesBox data={el}/>)
+            coursedata.length>0 ? coursedata.map((el)=><CoursesBox data={el}/>):fakedata.map((el)=><Skelleton/>)
             }
         </div>
         <div className={styles.Scroll_next} onClick={()=>scroll(500)}>

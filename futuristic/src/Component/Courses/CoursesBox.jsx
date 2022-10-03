@@ -1,14 +1,19 @@
 import { Box, HStack, Text } from '@chakra-ui/react'
 import React from 'react';
-import {useSelector} from "react-redux"
+import {useSelector,useDispatch} from "react-redux"
 import { Navigate, useNavigate } from 'react-router-dom'
+import { getaddtocart } from '../../Redux/Addtocartcontrol/action';
 import styles from "./CoursesBox.module.css"
 const CoursesBox = ({data}) => {
     const navigate=useNavigate()
+    const dispatch=useDispatch()
     const {isAuth}=useSelector((state)=>state.Authreducer)
-    const handlebuy=()=>{
+    const handlebuy=(id)=>{
         if(isAuth){
-            navigate("/cart")
+            dispatch(getaddtocart(id)).then(()=>{
+                navigate("/cart")
+            })
+          
         }
         else{
             navigate("/login")
@@ -44,7 +49,7 @@ const CoursesBox = ({data}) => {
            <Box as="button" >
                 <Text fontSize="xl" color="#8652ff">Explore</Text>
             </Box>
-          <Box as="button" onClick={handlebuy} bgColor="#8652ff" borderRadius='5px' width="100px">
+          <Box as="button" onClick={()=>handlebuy(data.id)} bgColor="#8652ff" borderRadius='5px' width="100px">
             <Text fontSize="large" color="white">Buy Now</Text>
           </Box>
            </HStack>

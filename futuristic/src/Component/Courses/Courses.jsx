@@ -5,8 +5,10 @@ import { getCourse } from "../../Redux/CoursesControl/action";
 import CoursesBox from "./CoursesBox";
 import styles from "./Courses.module.css"
 import { Box, Divider, Text } from "@chakra-ui/react";
+import Skelleton from "../../Pages/Skelleton";
 const Courses = () => {
   const {course_data}=useSelector((state)=>state.Coursereducer)
+  const fakedata=Array(10).fill(10)
   const dispatch=useDispatch()
   useEffect(()=>{
     if(course_data.length==0){
@@ -21,7 +23,7 @@ const Courses = () => {
       <Divider/>
       <div className={styles.coursesmain_wrap}>
         {
-          course_data.length>0&&course_data.map((el)=><CoursesBox data={el}/>)
+          course_data.length>0? course_data.map((el)=><CoursesBox data={el}/>):fakedata.map((el)=><Skelleton/>)
         }
       </div>
       <Divider/>

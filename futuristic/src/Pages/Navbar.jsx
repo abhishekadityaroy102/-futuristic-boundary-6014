@@ -32,6 +32,7 @@ resize: "vertical"
 }
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const {cartdata}=useSelector((state)=>state.Cartreducer)
   const navigate=useNavigate()
   const [text,settext]=useState({
     job_title:"",
@@ -136,7 +137,19 @@ const Navbar = () => {
             
           
           <Box as="button" onClick={()=>navigate("/cart")}>
-             <FaShoppingCart width="50px"/>
+         <div style={{display:"flex"}}>
+        
+            
+             <FaShoppingCart width="80px" />
+             <div>
+              <Box bgColor="yellow" borderRadius="60%">
+                
+             <Text color="black" fontSize="12px" borderRadius="50%"fontWeight="bold">{cartdata.length}</Text>
+              </Box>
+             </div>
+             </div>
+         
+             
           </Box>
       {/* </div> */}
       </HStack>

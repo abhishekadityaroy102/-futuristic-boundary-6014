@@ -4,7 +4,7 @@ import axios from "axios"
 const getJob= (params)=>(dispatch)=>{
   console.log("inside action",params)
   dispatch({ type: types.GET_JOB_REQUEST})
-  return axios.get("http://localhost:8080/jobs",params)
+  return axios.get("https://6333deaa433198e79dca824b.mockapi.io/Shine",params)
   .then((r)=>{
    
    dispatch({ type: types.GET_JOB_SUCCESS, payload:r.data})
