@@ -1,0 +1,29 @@
+/* .coursesidewrap{
+ display: flex;
+ width: 100%;
+} */
+.courseboxwrap{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.courseslidebox{
+    width: 83%;
+    display: flex;
+    justify-content: space-between;
+ overflow-x: scroll;   
+ overflow: hidden;
+ margin:20px;
+ gap:20px;
+ 
+ margin-right: 20px; 
+ 
+}
+.Scroll_next{
+   /* position: relative; */
+   margin-top: 150px;
+}
+.Scroll_prev{
+ /* position: relative; */
+ margin-top: 150px;
+}

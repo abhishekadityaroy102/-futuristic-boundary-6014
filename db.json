@@ -1,0 +1,137 @@
+{
+    "jobs":[
+        {
+         "job_title": "DG - Process Developer - Customer Service",
+         "company_name": "Genpact India Pvt. Ltd.",
+         "location": "Bangalore",
+         "salary":"5 lakh",
+         "early":"Be an Early Applicant",
+         "reqular":"Regular",
+         "experience": "0 to 4 Yrs",
+          "skill":["html", "css","javascript", "React"],
+         "id": "1"
+        },
+        {
+            "job_title": "Hiring for Python/AWS Developer",
+            "company_name": "GFL RECRUITMENT PRIVATE LIMITED",
+            "location": "Bangalore",
+            "salary":"3 lakh",
+            "early":"Regular",
+             "reqular":"5 Position",
+            "experience": "2 to 4 Yrs",
+             "skill":["html", "css","javascript", "React"],
+            "id": "2"
+           },
+           {
+            "job_title": "Jr. Software Engineer",
+            "company_name": "Xoriant Solutions Pvt Ltd",
+            "location": "Bangalore",
+            "experience": "2 to 4 Yrs",
+            "early":"Be an Early Applicant",
+         "reqular":"Regular",
+              "salary":"4 lakh",
+             "skill":["html", "css","javascript", "React"],
+            "id": "3"
+           },
+           {
+            "job_title": "Working profile for Consultant -Campus Fresher",
+            "company_name": "Genpact India Pvt. Ltd.",
+            "location": "Bangalore",
+            "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+         "reqular":"Regular",
+            "experience": "3 to 6 Yrs",
+             "skill":["html", "css","javascript", "React"],
+            "id": "4"
+           },
+           {
+            "job_title": "Senior Software Engg",
+            "company_name": "Xoriant Solutions Pvt Ltd.",
+            "location": "kerela",
+            "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+         "reqular":"Regular",
+            "experience": "2 to 3 Yrs",
+             "skill":["html", "css","javascript", "React"],
+            "id": "5"
+           },
+           {
+            "job_title": "Quant Strategist/Developer/Researcher - Quantitative Tr ...",
+            "company_name": "Madison Cube Recruitment",
+            "location": "Bangalore",
+            "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+         "reqular":"Regular",
+            "experience": "0 to 4 Yrs",
+             "skill":["html", "css","javascript", "React"],
+            "id": "6"
+           },
+           {
+            "job_title": "Aem Developer",
+            "company_name": "Aem Developer Ltd.",
+            "location": "Bangalore",
+            "salary":"7 lakh",
+            "early":"Be an Early Applicant",
+             "reqular":"Regular",
+            "experience": "3 to 6 Yrs",
+             "skill":["html", "css","javascript", "React"],
+            "id": "7"
+           },
+           {
+            "job_title": "Apple iOS Corporate Trainer - SWIFT/Objective C",
+            "company_name": "Sportism",
+            "location": "Barh",
+            "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+              "reqular":"Regular",
+            "experience": "3 to 4 Yrs",
+             "skill":["html", "css","javascript", "React"],
+            "id": "8"
+           },
+           {
+            "job_title": "Hiring for Asp.net Developer",
+            "company_name": "Space Consultant..",
+            "location": "Bangalore",
+            "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+             "reqular":"Regular",
+            "experience": "2 to 4 Yrs",
+             "skill":["html", "css","javascript", "React"],
+            "id": "9"
+           },
+           {
+            "job_title": "ASP.Net Developer",
+            "company_name": "Space Consultant.",
+            "location": "Bangalore",
+            "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+            "reqular":"Regular",
+            "experience": "1 to 3 Yrs",
+             "skill":["html", "css","javascript", "React"],
+            "id": "10"
+           },
+           {
+            "job_title": "Senior Java Technical Manager",
+            "company_name": "Xoriant Solutions Pvt Ltd",
+            "location": "Bangalore",
+            "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+             "reqular":"Regular",
+            "experience": "2 to 5 Yrs",
+             "skill":["html", "css","javascript", "React","Sql","Java"],
+            "id": "11"
+           },
+           {
+            "job_title": "Wordpress Developer (freshers)",
+            "company_name": "Vish International",
+            "location": "Bangalore",
+            "salary":"5 lakh",
+            "early":"Be an Early Applicant",
+             "reqular":"Regular",
+            "experience": "2 to 4 Yrs",
+             "skill":["html", "css","javascript", "React","Mongodb","Nodejs"],
+            "id": "12"
+           }
+
+       ]
+}

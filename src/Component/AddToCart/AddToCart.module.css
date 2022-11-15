@@ -1,0 +1,29 @@
+.AddToCart_wrap{
+    display: flex;
+    width: 90%;
+    margin:auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.cartleft_wrap{
+   width: 700px;
+   margin-top: 20px;
+  
+}
+.cartright_wrap{
+  
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    text-align: start;
+  width:350px;
+  margin:auto;
+  margin-top: 20px;
+}
+.cartleft_wrap>div{
+    border:1px solid rgb(222, 212, 212);
+    height: 100px;
+    margin:auto;
+    border-radius: 4px;
+    margin-top: 15px;
+    box-shadow: rgba(152, 118, 232, 0.24) 0px 3px 8px;
+}
