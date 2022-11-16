@@ -136,6 +136,7 @@ export default function Profile(){
             </div>
 
             {/* 6div */}
+{/*feeback: fp02_102, fw15_273, fp03_266: it seems almost similar heading, you can use loops to redner them by passing dynamic config*/}
             <div style={{ display:"flex",boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px",height:"auto",marginTop:"70px",width:"90%",marginLeft:"9%"}}>
             <div style={{ textAlign: "left",marginLeft:"5%",width:"40%",}}>
             <h1 style={{ marginBottom:"19PX"}}>Desired Job Details</h1>

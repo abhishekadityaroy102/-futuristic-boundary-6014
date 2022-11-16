@@ -24,6 +24,8 @@ const Navlinkfornavbar = () => {
     const [jobs,setjobs]=useState(false);
     const [courses,setcourses]=useState(false);
     const [blogs,setblogs]=useState(false)
+    
+    // feedback: fp02_102 - divide this component into smaller one so that you can make navigation dynamic
   return (
     
     <div className={styles.Navlink_wrap}>

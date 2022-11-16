@@ -111,6 +111,7 @@ const Footer = () => {
       <hr />
       <div className={styles.last}>
         <div className={styles.last1}>
+          {/*feebakc: fw19_0506, fp02_102 - use loops here by passing dynamic config here we can pass URLs and text for hrefs*/}
           <a href="https://www.shine.com/faqs/">FAQs | </a>
           <a href="https://www.shine.com/aboutus/">About Us | </a>
           <a href="https://learning.shine.com/contact-us">Contact Us | </a>

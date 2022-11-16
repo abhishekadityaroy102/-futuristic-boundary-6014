@@ -7,6 +7,9 @@ import { FaPen ,FaLocationArrow ,FaTasks,FaShareAlt,FaBriefcase,FaAngleDown ,FaR
 import {useSelector,useDispatch} from "react-redux";
 import { getJob } from '../../Redux/AppControl/action';
 
+// feedback: fp02_102 and fw15_273 - big component should be divided into smaller one
+// format code
+// you can re-use component by dividing it into smaller one
 const Job = () => {
 
   const Location = useLocation();

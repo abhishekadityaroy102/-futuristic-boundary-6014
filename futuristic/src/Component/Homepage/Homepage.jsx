@@ -4,6 +4,8 @@ import { Box,Input, Image, Flex, Button,Text,} from "@chakra-ui/react";
 import Footer from '../../Pages/Footer';
 import Courseside from './Courseside';
 // import {MdAssessment} from "react-icons/md";
+
+// feedback: fp02_102 and fw15_273 -     - Mock data should be moved out of component
 const Homepage = () => {
   const [counter, setCounter] = useState(0);
   const [data, setData]= useState(0);
