@@ -2,6 +2,8 @@ import React from 'react';
 import styled from "styled-components";
 import { FaLocationArrow ,FaTasks,FaShareAlt,FaBriefcase } from "react-icons/fa";
 const Job = () => {
+  
+  // feedback: fw15_273 - this component is too big(break this component) and you can use constant and JSON file for static data
   return  <><Jobdetil>
       <Box>
         <Div>
