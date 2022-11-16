@@ -3,6 +3,11 @@ import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { loginaction } from "../../Redux/Authentication/action";
 
+
+// feedback: fw19_0506, fp03_266, fp02_102 - don't use encode image in src instead use blob urls 
+// Remove commented code
+// classname should be more descriptive
+// code should be properly formatted
 export default function Login() {
     let navigate = useNavigate();
     const location=useLocation()
