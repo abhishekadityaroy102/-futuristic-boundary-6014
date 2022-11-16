@@ -14,6 +14,8 @@ const CoursesBox = ({data}) => {
             navigate("/login")
         }
     }
+    
+    // feedback: fp02_102 - move static text to constant or JSON file
   return (
     <div className={styles.Coursesboxwrap}>
         <div className={styles.Coursesbox_img_disc_wrap}>
