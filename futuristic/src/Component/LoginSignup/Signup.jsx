@@ -12,6 +12,7 @@ export default function Signup() {
 
   const navigate = useNavigate();
 
+  // feedback: fw19_0506, fp03_266, fp02_102 - don't use URLS direclty into the view
   const handleSubmit = async (event) => {
     event.preventDefault();
     await fetch("https://postdata-rest-api.herokuapp.com/post", {
